@@ -2,14 +2,15 @@
 
 describe('Interaction', () => {
   describe('when instantiated with a positive number', () => {
+    let deposit;
+    beforeEach(() => {
+      deposit = new Interaction(100)
+    })
     it('has a credit of that amount', () => {
-      let deposit = new Interaction(100)
       expect(deposit.credit).toEqual(100)
     })
     it("has today's date in a human format", () => {
-      let today = new Date
-      let todayString = dateToString(today)
-      let deposit = new Interaction(100)
+      let todayString = dateToString(new Date)
       expect(deposit.date).toEqual(todayString)
     })
   })
