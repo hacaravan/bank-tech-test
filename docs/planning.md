@@ -30,12 +30,33 @@ So I can pay for things
 I want to withdraw money from my account
 >
 
->As a bank customer
-So I can track my spending
-I want to see when I made deposits and withdrawals
+>As a bank customer  
+So I can track my spending  
+I want to see a list of my deposits and withdrawals
 >
 
->As a bank customer
-So I can track my spending
-I want to track my balance after each deposit and withdrawal
+>As a bank customer  
+So I can track my spending  
+I want this list to show the date, credit or debit, and current balance for each interaction
 >
+
+## Nouns & Actions
+Nouns  
+* account
+* balance
+* interactions
+* interaction
+* date
+* credit
+* debit
+
+Actions
+* deposit money
+* withdraw money
+* print statement
+
+## Classes & Methods
+Class | Properties | Methods
+---| --- | ---|
+account | balance, interactions | deposit(amount), withdraw(amount), printStatement()
+interaction | date, credit, debit |
