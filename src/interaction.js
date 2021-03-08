@@ -2,7 +2,9 @@
 
 class Interaction {
   constructor(amount) {
-    this.credit = amount;
+    if(amount < 0) {
+      this.debit = - amount
+    } else { this.credit = amount; }
     this.date = this.todayString();
   }
 
