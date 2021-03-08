@@ -19,3 +19,23 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 ## Converting to User Stories
+
+>As a bank customer  
+So I can buy things in future  
+I want to deposit money into my account
+>
+
+>As a bank customer  
+So I can pay for things  
+I want to withdraw money from my account
+>
+
+>As a bank customer
+So I can track my spending
+I want to see when I made deposits and withdrawals
+>
+
+>As a bank customer
+So I can track my spending
+I want to track my balance after each deposit and withdrawal
+>
