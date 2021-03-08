@@ -8,13 +8,7 @@ describe('Interaction', () => {
     })
     it("has today's date in a human format", () => {
       let today = new Date
-      let day = today.getDate()
-      let month = today.getMonth() + 1
-      let year = today.getFullYear()
-      let dd = (day < 10 ? "0" : "") + day
-      let mm = (month < 10 ? "0" : "") + month
-      let yyyy = String(year)
-      let todayString = `${dd}/${mm}/${yyyy}`
+      let todayString = dateToString(today)
       let deposit = new Interaction(100)
       expect(deposit.date).toEqual(todayString)
     })
