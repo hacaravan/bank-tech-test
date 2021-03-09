@@ -1,4 +1,5 @@
 /*global dateToString*/
+/* exported Transaction */
 
 "use strict"
 

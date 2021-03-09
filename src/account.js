@@ -1,4 +1,5 @@
 /*global Transaction*/
+/* exported Account */
 
 "use strict"
 

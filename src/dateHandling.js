@@ -1,3 +1,5 @@
+/* exported dateToString */
+
 "use strict"
 
 function dateToString(date) {
