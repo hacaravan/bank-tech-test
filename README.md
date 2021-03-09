@@ -1,10 +1,11 @@
 # Simple Bank App
 
 ## Intro
-A simple bank simulation that can be run in a web console with deposit, withdrawal & statement printing functionality. See [specifications](#specifications). Completed as part of week 10 of the Makers Academy course.
+A simple bank simulation that can be run in a web console with deposit, withdrawal & statement printing functionality. See [specifications](#specifications). Completed as part of week 10 of the Makers Academy course.  
 
 ## Set Up & Installation
 To run the app, clone this repo locally and open `bankRunner.html` in your browser. You can then interact with the app using the console in your browser on that page. Instructions describing available functions are listed on the `bankRunner.html` page.
+![Screenshot of how to use the app](docs/appScreenShot.png)
 
 ### Running Tests
 Tests are written using jasmine. To see test results, go to `specRunner.html` in your browser.
