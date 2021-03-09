@@ -9,6 +9,10 @@ class Interaction {
     this.date = this.todayString();
   }
 
+  transacInfo() {
+    return `${this.date} || ${this.credit.toFixed(2)} || || ${this.credit.toFixed(2)}`
+  }
+
   todayString() {
     let today = new Date
     let day = today.getDate()

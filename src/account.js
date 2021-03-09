@@ -11,6 +11,6 @@ class Account {
 
   deposit(amount) {
     let deposit = new Interaction(amount)
-    this.statement += `\n${deposit.date} || ${deposit.credit.toFixed(2)} || || ${deposit.credit.toFixed(2)}`
+    this.statement += `\n${deposit.transacInfo()}`
   }
 }
