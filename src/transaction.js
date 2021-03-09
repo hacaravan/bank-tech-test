@@ -1,6 +1,6 @@
 "use strict"
 
-class Interaction {
+class Transaction {
 
   constructor(amount, optionalDate) {
     this.date = dateToString(optionalDate) || this.todayString();

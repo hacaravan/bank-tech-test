@@ -1,10 +1,10 @@
 "use strict"
 
-describe('Interaction', () => {
+describe('Transaction', () => {
   describe('when instantiated with a positive number', () => {
     let deposit;
     beforeEach(() => {
-      deposit = new Interaction(100)
+      deposit = new Transaction(100)
     })
     it('has a credit of that amount', () => {
       expect(deposit.credit).toEqual(100)
@@ -18,7 +18,7 @@ describe('Interaction', () => {
   describe('when instantiated with a negative number', () => {
     let withdrawal;
     beforeEach(() => {
-      withdrawal = new Interaction(-100)
+      withdrawal = new Transaction(-100)
     })
     it('has a debit of that amount', () => {
       expect(withdrawal.debit).toEqual(100)
@@ -32,8 +32,8 @@ describe('Interaction', () => {
   describe('when instantiated with a date as well', () => {
     let deposit, withdrawal, testDate = new Date('2021-05-19');
     beforeEach(() => {
-      deposit = new Interaction(100, testDate)
-      withdrawal = new Interaction(-100, testDate)
+      deposit = new Transaction(100, testDate)
+      withdrawal = new Transaction(-100, testDate)
     })
     describe('as a positive number', () => {
       it('has that date in human format', () => {

@@ -15,13 +15,13 @@ class Account {
   }
 
   deposit(amount, optionalDate) {
-    let deposit = new Interaction(amount, optionalDate)
+    let deposit = new Transaction(amount, optionalDate)
     this.balance += amount
     this.statements.push({transaction: deposit, balance: this.balance})
   }
 
   withdraw(amount) {
-    let withdrawal = new Interaction(-amount)
+    let withdrawal = new Transaction(-amount)
     this.balance -= amount
     this.statements.push({transaction: withdrawal, balance: this.balance})
   }
