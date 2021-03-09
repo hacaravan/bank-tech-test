@@ -1,6 +1,7 @@
 "use strict"
 
 function dateToString(date) {
+  if(!date) { return }
   let day = date.getDate()
   let month = date.getMonth() + 1
   let year = date.getFullYear()
