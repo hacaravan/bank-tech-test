@@ -30,7 +30,7 @@ describe ('Account', () => {
     })
   })
 
-  describe('deposit', () => {
+  describe('deposit()', () => {
     it("adds a line to the statement with a credit and today's date and increases the balance", () => {
       account.deposit(100);
       let todayString = dateToString(new Date)
@@ -43,4 +43,13 @@ describe ('Account', () => {
       })
     })
   })
+
+  describe('withdraw()', () => {
+    it("adds a line to the statement with a debit and today's date and decreases the balance", () => {
+      account.withdraw(100);
+      let todayString = dateToString(new Date)
+      expect(account.printStatement()).toEqual(`date || credit || debit || balance\n${todayString} || || 100.00 || -100.00`)
+    })
+  })
+  
 })

@@ -8,8 +8,8 @@ class Account {
   }
   printStatement() {
     let statement = 'date || credit || debit || balance'
-    this.statements.slice().reverse().forEach(transaction => {
-      statement += `\n${transaction.deposit.transacInfo(transaction.balance)}`
+    this.statements.slice().reverse().forEach(line => {
+      statement += `\n${line.transaction.transacInfo(line.balance)}`
     });
     return statement;
   }
@@ -17,6 +17,12 @@ class Account {
   deposit(amount, optionalDate) {
     let deposit = new Interaction(amount, optionalDate)
     this.balance += amount
-    this.statements.push({deposit: deposit, balance: this.balance})
+    this.statements.push({transaction: deposit, balance: this.balance})
+  }
+
+  withdraw(amount) {
+    let withdrawal = new Interaction(-amount)
+    this.balance -= amount
+    this.statements.push({transaction: withdrawal, balance: this.balance})
   }
 }
