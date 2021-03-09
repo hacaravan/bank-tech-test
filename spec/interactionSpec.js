@@ -43,6 +43,14 @@ describe('Interaction', () => {
         expect(deposit.credit).toEqual(100)
       })
     })
+    describe('as a negative number', () => {
+      it('has that date in human format', () => {
+        expect(withdrawal.date).toEqual('19/05/2021')
+      })
+      it('has a debit of that amount', () => {
+        expect(withdrawal.debit).toEqual(100)
+      })
+    })
 
   })
 
