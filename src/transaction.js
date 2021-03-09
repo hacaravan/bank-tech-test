@@ -13,8 +13,8 @@ class Transaction {
 
   transacInfo() {
     let credit = "", debit = ""
-    if (this.credit) {credit = " " + this.credit.toFixed(2)};
-    if (this.debit) {debit = " " + this.debit.toFixed(2)};
+    if (this.credit) {credit = " " + this.credit.toFixed(2)}
+    if (this.debit) {debit = " " + this.debit.toFixed(2)}
     return `${this.date} ||${credit} ||${debit} ||`
   }
 
