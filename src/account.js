@@ -6,7 +6,7 @@ class Account {
     this.statements = []
     this.balance = 0
   }
-  
+
   printStatement() {
     let statement = 'date || credit || debit || balance'
     this.statements.slice().reverse().forEach(line => {
@@ -19,8 +19,8 @@ class Account {
     this.transact(amount, optionalDate)
   }
 
-  withdraw(amount) {
-    this.transact(-amount)
+  withdraw(amount, optionalDate) {
+    this.transact(-amount, optionalDate)
   }
 
   transact(amount, optionalDate) {

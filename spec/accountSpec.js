@@ -50,6 +50,12 @@ describe ('Account', () => {
       let todayString = dateToString(new Date)
       expect(account.printStatement()).toEqual(`date || credit || debit || balance\n${todayString} || || 100.00 || -100.00`)
     })
+    describe('when passed a date as well as an amount', () => {
+      it('has that date in the statement', () => {
+        account.withdraw(100, testDate)
+        expect(account.printStatement()).toEqual('date || credit || debit || balance\n19/05/2021 || || 100.00 || -100.00')
+      })
+    })
   })
-  
+
 })
