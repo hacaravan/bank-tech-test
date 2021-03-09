@@ -9,8 +9,8 @@ class Account {
     return this.statement;
   }
 
-  deposit(amount) {
-    let deposit = new Interaction(amount)
+  deposit(amount, optionalDate) {
+    let deposit = new Interaction(amount, optionalDate)
     this.statement += `\n${deposit.transacInfo()}`
   }
 }
