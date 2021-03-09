@@ -1,6 +1,7 @@
 "use strict"
 
 class Interaction {
+
   constructor(amount) {
     if(amount < 0) {
       this.debit = - amount
