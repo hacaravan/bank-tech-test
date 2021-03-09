@@ -21,12 +21,14 @@ Both these functions instantiate a new `Transaction` instance, which is then sto
 The `Transaction` object has information about the credit or debit for the transaction and the date it was created (which can be specified, but defaults to today).  
 You can run `printStatement()` on an account object to see a list of transactions, sorted from most to least recent.
 
+#### Things to note
+- Since the task did not specify that people could not go overdrawn, there is no stop to the amount of money you can put in or take out. Your balance will however appear as a negative.
+
 ### Planning
 Before writing tests or code, I converted the specifications into User Stories. I then pulled out important nouns & actions from these user stories to work out what classes I would need. My planning can be found in [the docs folder](docs/planning.md).
 
 ### TDD
 Having planned how I thought the outcome would look, I began by writing tests, and passing them one at a time, then refactoring. I built up the suite from here.
-
 
 ## Specifications
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
