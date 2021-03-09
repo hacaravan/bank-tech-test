@@ -30,6 +30,6 @@ class Account {
   }
 
   format(line) {
-    return `\n${line.transaction.transacInfo(line.balance)}`
+    return `\n${line.transaction.transacInfo()} ${line.balance.toFixed(2)}`
   }
 }
