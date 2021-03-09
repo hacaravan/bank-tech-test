@@ -2,13 +2,23 @@
 
 describe ('Account', () => {
   let account;
+  let testDate
   beforeEach( () => {
+    testDate = new Date('2021-05-19')
     account = new Account
   })
   describe('printStatement', () => {
     describe("when you haven't added any money yet", () => {
       it('prints just the headers', () => {
         expect(account.printStatement()).toEqual('date || credit || debit || balance')
+      })
+    })
+    describe('when you deposit on different days', () => {
+      it('prints newer transactions first', () => {
+        let earlyDate = new Date('2020-05-19');
+        account.deposit(100, earlyDate);
+        account.deposit(200, testDate);
+        expect(account.printStatement().indexOf("19/05/2021")).toBeLessThan(account.printStatement().indexOf("19/05/2020"))
       })
     })
   })
@@ -21,9 +31,8 @@ describe ('Account', () => {
     })
     describe('when passed a date as well as an amount', () => {
       it('has that date in the statement', () => {
-        let testDate = new Date('2021-05-19')
         account.deposit(100, testDate)
-        expect(account.printStatement()).toEqual(`date || credit || debit || balance\n19/05/2021 || 100.00 || || 100.00`)
+        expect(account.printStatement()).toEqual('date || credit || debit || balance\n19/05/2021 || 100.00 || || 100.00')
       })
     })
   })

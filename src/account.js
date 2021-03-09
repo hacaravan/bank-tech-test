@@ -3,14 +3,18 @@
 class Account {
 
   constructor() {
-    this.statement = 'date || credit || debit || balance'
+    this.statements = []
   }
   printStatement() {
-    return this.statement;
+    let statement = 'date || credit || debit || balance'
+    this.statements.slice().reverse().forEach(transaction => {
+      statement += `\n${transaction.transacInfo()}`
+    });
+    return statement;
   }
 
   deposit(amount, optionalDate) {
     let deposit = new Interaction(amount, optionalDate)
-    this.statement += `\n${deposit.transacInfo()}`
+    this.statements.push(deposit)
   }
 }
