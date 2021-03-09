@@ -11,11 +11,11 @@ class Transaction {
     }
   }
 
-  transacInfo(balance) {
+  transacInfo() {
     let credit = "", debit = ""
     if (this.credit) {credit = " " + this.credit.toFixed(2)};
     if (this.debit) {debit = " " + this.debit.toFixed(2)};
-    return `${this.date} ||${credit} ||${debit} || ${balance.toFixed(2)}`
+    return `${this.date} ||${credit} ||${debit} || `
   }
 
   todayString() {

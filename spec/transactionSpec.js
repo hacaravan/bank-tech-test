@@ -29,6 +29,15 @@ describe('Transaction', () => {
     })
   })
 
+  describe('transacInfo()', () => {
+    describe('for a credit', () => {
+      it("returns a string with the date, credit amount and empty column", () => {
+        let deposit = new Transaction(100, new Date('2021-05-19'))
+        expect(deposit.transacInfo()).toEqual('19/05/2021 || 100.00 || || ')
+      })
+    })
+  })
+
   describe('when instantiated with a date as well', () => {
     let deposit, withdrawal, testDate = new Date('2021-05-19');
     beforeEach(() => {
