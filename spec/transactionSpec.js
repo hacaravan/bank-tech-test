@@ -1,3 +1,5 @@
+/*global dateToString, Transaction*/
+
 "use strict"
 
 describe('Transaction', () => {

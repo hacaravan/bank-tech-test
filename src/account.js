@@ -1,3 +1,5 @@
+/*global Transaction*/
+
 "use strict"
 
 class Account {

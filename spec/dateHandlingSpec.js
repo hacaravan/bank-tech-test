@@ -1,3 +1,5 @@
+/*global dateToString*/
+
 "use strict"
 
 describe('dateToString()', () => {

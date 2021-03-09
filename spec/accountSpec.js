@@ -1,3 +1,5 @@
+/*global dateToString, Account*/
+
 "use strict"
 
 describe ('Account', () => {
