@@ -14,11 +14,18 @@ describe ('Account', () => {
       })
     })
     describe('when you deposit on different days', () => {
-      it('prints newer transactions first', () => {
-        let earlyDate = new Date('2020-05-19');
+      let earlyDate;
+      beforeEach( () => {
+        earlyDate = new Date('2020-05-19');
         account.deposit(100, earlyDate);
         account.deposit(200, testDate);
+      })
+      it('prints newer transactions first', () => {
         expect(account.printStatement().indexOf("19/05/2021")).toBeLessThan(account.printStatement().indexOf("19/05/2020"))
+      })
+      it('increases the balance by the correct amount', () => {
+        let expectation = 'date || credit || debit || balance\n19/05/2021 || 200.00 || || 300.00\n19/05/2020 || 100.00 || || 100.00'
+        expect(account.printStatement()).toEqual(expectation)
       })
     })
   })

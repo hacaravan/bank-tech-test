@@ -11,8 +11,8 @@ class Interaction {
     }
   }
 
-  transacInfo() {
-    return `${this.date} || ${this.credit.toFixed(2)} || || ${this.credit.toFixed(2)}`
+  transacInfo(balance) {
+    return `${this.date} || ${this.credit.toFixed(2)} || || ${balance.toFixed(2)}`
   }
 
   todayString() {
