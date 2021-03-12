@@ -7,17 +7,12 @@ class Account {
 
   constructor() {
     this.transactions = []
-    this.balance = 0
   }
 
   printStatement() {
     let statement = 'date || credit || debit || balance'
     this.transactions.slice().reverse().forEach((transaction, index, transactions) => {
-      const reducer = (accumulator, transaction) => {
-        return accumulator + (transaction.credit || 0) - (transaction.debit || 0)
-      }
-      let priorTransactions = transactions.slice().reverse()
-      let balance = priorTransactions.slice(0, priorTransactions.length - index).reduce(reducer, 0)
+      let balance = this.calculateBalance(transactions, index)
       statement += this.format(transaction, balance)
     });
     return statement;
@@ -33,12 +28,16 @@ class Account {
 
   transact(amount, optionalDate) {
     let transaction = new Transaction(amount, optionalDate)
-    this.balance += amount
     this.transactions.push(transaction)
   }
 
   format(transaction, balance) {
     return `\n${transaction.transacInfo()} ${balance.toFixed(2)}`
+  }
+
+  calculateBalance(transactions, index) {
+    const reducer = (accumulator, transaction) => accumulator + (transaction.credit || 0) - (transaction.debit || 0)
+    return transactions.slice().reverse().slice(0, transactions.length - index).reduce(reducer, 0)
   }
 
 }
