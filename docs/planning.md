@@ -62,7 +62,7 @@ account | balance, transactions | deposit(amount), withdraw(amount), printStatem
 transaction | date, credit, debit |
 
 ## Further Planning
-- [ ] Feature tests
+- [x] Feature tests
 - [ ] Calculate balance on creating statement (don't need to store overall balance)
 - [ ] Extract printing & formatting into classes
 - [ ] Isolate tests using Time

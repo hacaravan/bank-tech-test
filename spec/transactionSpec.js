@@ -3,6 +3,13 @@
 "use strict"
 
 describe('Transaction', () => {
+  let testDate;
+  beforeEach( () => {
+    testDate = new Date('2021-03-17')
+    jasmine.clock().install();
+    jasmine.clock().mockDate(testDate)
+  })
+
   describe('when instantiated with a positive number', () => {
     let deposit;
     beforeEach(() => {
@@ -12,8 +19,7 @@ describe('Transaction', () => {
       expect(deposit.credit).toEqual(100)
     })
     it("has today's date in a human format", () => {
-      let todayString = dateToString(new Date)
-      expect(deposit.date).toEqual(todayString)
+      expect(deposit.date).toEqual("17/03/2021")
     })
   })
 
@@ -26,8 +32,7 @@ describe('Transaction', () => {
       expect(withdrawal.debit).toEqual(100)
     })
     it("has today's date in a human format", () => {
-      let todayString = dateToString(new Date)
-      expect(withdrawal.date).toEqual(todayString)
+      expect(withdrawal.date).toEqual("17/03/2021")
     })
   })
 
@@ -68,7 +73,10 @@ describe('Transaction', () => {
         expect(withdrawal.debit).toEqual(100)
       })
     })
+  })
 
+  afterEach( () => {
+    jasmine.clock().uninstall();
   })
 
 })
