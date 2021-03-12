@@ -8,7 +8,7 @@ To run the app, clone this repo locally and open `bankRunner.html` in your brows
 ![Screenshot of how to use the app](docs/appScreenShot.png)
 
 ### Running Tests
-Tests are written using jasmine. To see test results, go to `specRunner.html` in your browser.
+Tests are written using jasmine. To see test results, open `specRunner.html` in your browser.
 
 ## Approach
 - Written in JS

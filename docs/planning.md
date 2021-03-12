@@ -60,3 +60,10 @@ Class | Properties | Methods
 ---| --- | ---|
 account | balance, transactions | deposit(amount), withdraw(amount), printStatement()
 transaction | date, credit, debit |
+
+## Further Planning
+- [ ] Feature tests
+- [ ] Calculate balance on creating statement (don't need to store overall balance)
+- [ ] Extract printing & formatting into classes
+- [ ] Isolate tests using Time
+- [ ] Remove commented code in Transaction file
