@@ -84,5 +84,24 @@ describe("Statement", () => {
         })
       })
     })
+    describe("for a mix of debits and credits", () => {
+      describe("for the last element", () => {
+        describe("when the last element in the array is a credit", () => {
+          it("returns the credit", () => {
+            expect(Statement.prototype.calculateBalance([withdrawal, deposit], 1)).toEqual(100)
+          })
+        })
+        describe("when the last element in the array is a debit", () => {
+          it("returns the negative of the debit", () => {
+            expect(Statement.prototype.calculateBalance([deposit, withdrawal], 1)).toEqual(-100)
+          })
+        })
+      })
+      describe("for earlier appearing debits and credits", () => {
+        it("returns the sum of the credits less the sum of the debits", () => {
+          expect(Statement.prototype.calculateBalance([deposit, withdrawal], 0)).toEqual(0)
+        })
+      })
+    })
   })
 })
