@@ -3,9 +3,8 @@
 "use strict"
 
 describe ('Account', () => {
-  let account, earlyDate, testDate;
+  let account, testDate;
   beforeEach( () => {
-    earlyDate = new Date('2020-05-19')
     testDate = new Date('2021-05-19')
     account = new Account
     jasmine.clock().install();
@@ -27,7 +26,7 @@ describe ('Account', () => {
   // })
 
   describe('printStatement', () => {
-    
+
   })
 
   describe('deposit()', () => {
