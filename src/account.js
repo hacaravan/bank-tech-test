@@ -6,19 +6,18 @@
 class Account {
 
   constructor() {
-    this.statements = []
+    this.transactions = []
     this.balance = 0
   }
 
   printStatement() {
     let statement = 'date || credit || debit || balance'
-    this.statements.slice().reverse().forEach((transaction, index, statements) => {
-      console.log(statements)
+    this.transactions.slice().reverse().forEach((transaction, index, transactions) => {
       const reducer = (accumulator, transaction) => {
         return accumulator + (transaction.credit || 0) - (transaction.debit || 0)
       }
-      let priorStatements = statements.slice().reverse()
-      let balance = priorStatements.slice(0, priorStatements.length - index).reduce(reducer, 0)
+      let priorTransactions = transactions.slice().reverse()
+      let balance = priorTransactions.slice(0, priorTransactions.length - index).reduce(reducer, 0)
       statement += this.format(transaction, balance)
     });
     return statement;
@@ -35,10 +34,11 @@ class Account {
   transact(amount, optionalDate) {
     let transaction = new Transaction(amount, optionalDate)
     this.balance += amount
-    this.statements.push(transaction)
+    this.transactions.push(transaction)
   }
 
   format(transaction, balance) {
     return `\n${transaction.transacInfo()} ${balance.toFixed(2)}`
   }
+
 }
