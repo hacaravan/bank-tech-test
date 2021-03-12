@@ -66,4 +66,3 @@ transaction | date, credit, debit |
 - [ ] Calculate balance on creating statement (don't need to store overall balance)
 - [ ] Extract printing & formatting into classes
 - [ ] Isolate tests using Time
-- [ ] Remove commented code in Transaction file
