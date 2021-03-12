@@ -12,6 +12,20 @@ describe ('Account', () => {
     jasmine.clock().mockDate(testDate)
   })
 
+  // it("deals with multiple", () => {
+  //   account.deposit(100, earlyDate);
+  //   account.deposit(100, earlyDate);
+  //   account.deposit(100, earlyDate);
+  //   account.deposit(100, earlyDate);
+  //   account.deposit(100, earlyDate);
+  //   account.deposit(200, testDate);
+  //   account.deposit(200, testDate);
+  //   account.deposit(200, testDate);
+  //   account.deposit(200, testDate);
+  //   account.deposit(200, testDate);
+  //   expect(account.printStatement()).toEqual(1)
+  // })
+
   describe('printStatement', () => {
     describe("when you haven't added any money yet", () => {
       it('prints just the headers', () => {
