@@ -49,4 +49,11 @@ describe("Statement", () => {
       expect(Statement.prototype.format(deposit, 500)).toEqual('19/05/2021 || 100.00 || || 500.00')
     })
   })
+  describe("calculateBalance()", () => {
+    describe("for a single credit", () => {
+      it("returns the credit", () => {
+        expect(Statement.prototype.calculateBalance([deposit], 0)).toEqual(100)
+      })
+    })
+  })
 })
