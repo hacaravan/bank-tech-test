@@ -60,5 +60,29 @@ describe("Statement", () => {
         expect(Statement.prototype.calculateBalance([withdrawal], 0)).toEqual(-100)
       })
     })
+    describe("for multiple credits", () => {
+      describe("for the last credit", () => {
+        it("returns the credit", () => {
+          expect(Statement.prototype.calculateBalance([deposit, deposit], 1)).toEqual(100)
+        })
+      })
+      describe("for earlier appearing credits", () => {
+        it("returns the cumulative sum of the credit", () => {
+          expect(Statement.prototype.calculateBalance([deposit, deposit], 0)).toEqual(200)
+        })
+      })
+    })
+    describe("for multiple debits", () => {
+      describe("for the last debit", () => {
+        it("returns the negative of the debit", () => {
+          expect(Statement.prototype.calculateBalance([withdrawal, withdrawal], 1)).toEqual(-100)
+        })
+      })
+      describe("for earlier appearing debits", () => {
+        it("returns the cumulative sum of the negatives of the debits", () => {
+          expect(Statement.prototype.calculateBalance([withdrawal, withdrawal], 0)).toEqual(-200)
+        })
+      })
+    })
   })
 })
