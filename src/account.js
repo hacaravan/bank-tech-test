@@ -9,8 +9,8 @@ class Account {
     this.transactions = []
   }
 
-  printStatement(statementClass = Statement) {
-    return statementClass.prototype.print(this.transactions);
+  printStatement() {
+    return Statement.prototype.print(this.transactions);
   }
 
   deposit(amount, optionalDate) {
