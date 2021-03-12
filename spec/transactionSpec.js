@@ -1,4 +1,4 @@
-/*global dateToString, Transaction*/
+/*global Transaction*/
 
 "use strict"
 

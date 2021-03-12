@@ -1,4 +1,4 @@
-/*global dateToString, Account*/
+/*global Account*/
 
 "use strict"
 
