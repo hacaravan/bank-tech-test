@@ -64,5 +64,5 @@ transaction | date, credit, debit |
 ## Further Planning
 - [x] Feature tests
 - [x] Calculate balance on creating statement (don't need to store overall balance)
-- [ ] Extract printing & formatting into classes
+- [x] Extract printing & formatting into classes
 - [x] Isolate tests using Time

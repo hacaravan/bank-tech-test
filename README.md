@@ -24,6 +24,7 @@ You can run `printStatement()` on an account object to see a list of transaction
 
 #### Things to note
 - Since the task did not specify that people could not go overdrawn, there is no stop to the amount of money you can put in or take out. Your balance will however appear as a negative.
+- In the testing, I'm testing both `account.printStatement()` and `Statement.prototype.print()` pretty similarly, but actually I think that's necessary, because I don't want my tests to be too closely tied to the current implementation.
 
 ### Planning
 Before writing tests or code, I converted the specifications into User Stories. I then pulled out important nouns & actions from these user stories to work out what classes I would need. My planning can be found in [the docs folder](docs/planning.md).

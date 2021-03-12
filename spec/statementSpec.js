@@ -1,16 +1,16 @@
 /*global Statement*/
 
 describe("Statement", () => {
+  let deposit, withdrawal, earlyDeposit;
+  beforeEach(() => {
+    deposit = jasmine.createSpyObj('deposit', ['transactionInfo'], {credit: 100})
+    deposit.transactionInfo.and.returnValue('19/05/2021 || 100.00 || ||')
+    withdrawal = jasmine.createSpyObj('withdrawal', ['transactionInfo'], {debit: 100})
+    withdrawal.transactionInfo.and.returnValue('19/05/2021 || || 100.00 ||')
+    earlyDeposit = jasmine.createSpyObj('deposit', ['transactionInfo'], {credit: 100})
+    earlyDeposit.transactionInfo.and.returnValue('19/05/2020 || 100.00 || ||')
+  })
   describe("print()", () => {
-    let deposit, withdrawal, earlyDeposit;
-    beforeEach(() => {
-      deposit = jasmine.createSpyObj('deposit', ['transactionInfo'], {credit: 100})
-      deposit.transactionInfo.and.returnValue('19/05/2021 || 100.00 || ||')
-      withdrawal = jasmine.createSpyObj('withdrawal', ['transactionInfo'], {debit: 100})
-      withdrawal.transactionInfo.and.returnValue('19/05/2021 || || 100.00 ||')
-      earlyDeposit = jasmine.createSpyObj('deposit', ['transactionInfo'], {credit: 100})
-      earlyDeposit.transactionInfo.and.returnValue('19/05/2020 || 100.00 || ||')
-    })
     describe("for an empty array", () => {
       it('prints just the headers', () => {
         expect(Statement.prototype.print([])).toEqual('date || credit || debit || balance')
@@ -42,6 +42,11 @@ describe("Statement", () => {
       it('prints the lines in the reverse of the order they were passed with the correct balance', () => {
         expect(Statement.prototype.print([earlyDeposit, withdrawal, deposit])).toEqual('date || credit || debit || balance\n19/05/2021 || 100.00 || || 100.00\n19/05/2021 || || 100.00 || 0.00\n19/05/2020 || 100.00 || || 100.00')
       })
+    })
+  })
+  describe("format()", () => {
+    it("returns the transactionInfo() of tbe transaction alongside the balance to 2 d.p.", () => {
+      expect(Statement.prototype.format(deposit, 500)).toEqual('19/05/2021 || 100.00 || || 500.00')
     })
   })
 })
