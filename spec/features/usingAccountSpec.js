@@ -33,6 +33,18 @@ describe("Account", () => {
     expect(account.printStatement()).toEqual(expectation)
   })
 
+  it("User can deposit and withdraw money on different days and see these transactions listed newest first", () => {
+    account.deposit(200)
+    testDate = new Date('2021-05-20')
+    jasmine.clock().mockDate(testDate)
+    account.withdraw(100)
+    testDate = new Date('2021-05-21')
+    jasmine.clock().mockDate(testDate)
+    account.deposit(300)
+    expectation = 'date || credit || debit || balance\n21/05/2021 || 300.00 || || 400.00\n20/05/2021 || || 100.00 || 100.00\n19/05/2021 || 200.00 || || 200.00'
+    expect(account.printStatement()).toEqual(expectation)
+  })
+
   afterEach( () => {
     jasmine.clock().uninstall();
   })
