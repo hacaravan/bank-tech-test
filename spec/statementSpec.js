@@ -55,5 +55,10 @@ describe("Statement", () => {
         expect(Statement.prototype.calculateBalance([deposit], 0)).toEqual(100)
       })
     })
+    describe("for a single debit", () => {
+      it("returns the negative of the debit", () => {
+        expect(Statement.prototype.calculateBalance([withdrawal], 0)).toEqual(-100)
+      })
+    })
   })
 })
