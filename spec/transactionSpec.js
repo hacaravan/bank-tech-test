@@ -36,17 +36,17 @@ describe('Transaction', () => {
     })
   })
 
-  describe('transacInfo()', () => {
+  describe('transactionInfo()', () => {
     describe('for a credit', () => {
       it("returns a string with the date, credit amount and empty column", () => {
         let deposit = new Transaction(100, new Date('2021-05-19'))
-        expect(deposit.transacInfo()).toEqual('19/05/2021 || 100.00 || ||')
+        expect(deposit.transactionInfo()).toEqual('19/05/2021 || 100.00 || ||')
       })
     })
     describe('for a debit', () => {
       it("returns a string with the date, empty column, and the debit amount", () => {
         let deposit = new Transaction(-100, new Date('2021-05-19'))
-        expect(deposit.transacInfo()).toEqual('19/05/2021 || || 100.00 ||')
+        expect(deposit.transactionInfo()).toEqual('19/05/2021 || || 100.00 ||')
       })
     })
   })
